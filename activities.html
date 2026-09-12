@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="台灣道家拍打保健協會｜全台公益講座活動紀實，記錄各場公益推廣活動的現場照片。">
+<link rel="canonical" href="https://daoist-paida.org/activities.html">
+<title>公益講座活動紀實｜台灣道家拍打保健協會</title>
+<style>
+:root{
+  --green:#3f7657; --deep:#244b39; --light:#eef6ef; --cream:#fbfaf4;
+  --gold:#b6924b; --text:#304238; --muted:#6b7a71;
+  --shadow:0 12px 35px rgba(36,75,57,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Noto Sans TC","Microsoft JhengHei",Arial,sans-serif;color:var(--text);background:var(--cream);line-height:1.8}
+a{text-decoration:none;color:inherit}
+.container{width:min(1160px,92%);margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(251,250,244,.96);backdrop-filter:blur(10px);border-bottom:1px solid #e5e8e1}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--deep)}
+.logo-mark{width:43px;height:43px;border-radius:50%;display:grid;place-items:center;background:var(--green);color:#fff;font-size:24px;font-family:serif}
+.logo small{display:block;font-size:11px;color:var(--muted);font-weight:500}
+.back-link{font-size:14px;font-weight:700;color:var(--green)}
+main{padding:60px 0 100px}
+.page-head{text-align:center;margin-bottom:48px}
+.kicker{color:var(--gold);font-weight:800;font-size:13px;letter-spacing:2px}
+h1{font-size:clamp(30px,5vw,44px);color:var(--deep);margin:8px 0 10px}
+.page-head p{color:var(--muted);max-width:600px;margin:auto}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.event-card{background:#fff;border-radius:20px;box-shadow:var(--shadow);border:1px solid #edf0eb;overflow:hidden;cursor:pointer;transition:.2s;display:flex;flex-direction:column}
+.event-card:hover{transform:translateY(-4px)}
+.event-card .thumb{aspect-ratio:4/3;background:var(--light) center/cover no-repeat;position:relative}
+.event-card .thumb.empty{display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:14px}
+.event-card .count{position:absolute;right:10px;bottom:10px;background:rgba(36,75,57,.82);color:#fff;font-size:12px;font-weight:700;padding:4px 10px;border-radius:20px}
+.event-card .body{padding:20px 22px;flex:1;display:flex;flex-direction:column}
+.event-card .tag{color:var(--gold);font-weight:800;font-size:12px;letter-spacing:1px;margin-bottom:6px}
+.event-card h3{color:var(--deep);font-size:19px;margin-bottom:8px}
+.event-card p{color:var(--muted);font-size:14px;flex:1}
+.event-card .cta{margin-top:14px;color:var(--green);font-weight:800;font-size:14px}
+.event-card.disabled{cursor:default}
+.event-card.disabled:hover{transform:none}
+.event-card.disabled .cta{color:var(--muted)}
+
+.lightbox{position:fixed;inset:0;background:rgba(20,32,26,.92);z-index:100;display:none;align-items:center;justify-content:center;padding:30px}
+.lightbox.open{display:flex}
+.lightbox-inner{max-width:920px;width:100%;text-align:center}
+.lightbox img{max-width:100%;max-height:70vh;border-radius:10px;box-shadow:0 20px 50px rgba(0,0,0,.4)}
+.lightbox-caption{color:#e7efe9;margin-top:16px;font-size:14px}
+.lightbox-nav{display:flex;align-items:center;justify-content:space-between;margin-top:18px}
+.lightbox-nav button{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:30px;padding:10px 20px;font-weight:700;font-size:14px;cursor:pointer}
+.lightbox-nav button:hover{background:rgba(255,255,255,.22)}
+.lightbox-close{position:absolute;top:22px;right:28px;color:#fff;font-size:30px;background:none;border:0;cursor:pointer;line-height:1}
+
+footer{background:#1d3529;color:#d8e5dc;padding:30px 0;text-align:center;font-size:13px}
+footer a{color:#bcd6c6;font-weight:700}
+
+@media(max-width:820px){
+  .grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+  .grid{grid-template-columns:1fr}
+  .lightbox-close{top:12px;right:16px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="logo" href="index.html#home">
+      <span class="logo-mark">道</span>
+      <span>台灣道家拍打保健協會<small>TAIWAN DAOIST RESONANCE PATTING HEALTH ASSOCIATION</small></span>
+    </a>
+    <a class="back-link" href="index.html#events">← 回首頁</a>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="page-head">
+      <div class="kicker">EVENT RECAP</div>
+      <h1>公益講座活動紀實</h1>
+      <p>全台巡迴公益講座現場紀錄，感謝每一位協助推廣、參與拍打保健的夥伴。</p>
+    </div>
+
+    <div class="grid" id="eventGrid"></div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    © 2026 台灣道家拍打保健協會｜<a href="index.html#contact">聯絡我們</a>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="關閉">×</button>
+  <div class="lightbox-inner">
+    <img id="lightboxImg" src="" alt="">
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+    <div class="lightbox-nav">
+      <button id="lightboxPrev">← 上一張</button>
+      <span id="lightboxCount" style="color:#cfe0d5;font-size:13px"></span>
+      <button id="lightboxNext">下一張 →</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const EVENTS = [
+  {
+    id: 'event1',
+    date: '2026.08.08',
+    location: '台北內湖',
+    title: '第一場｜台北內湖',
+    desc: '全台公益講座首場活動，於台北內湖舉辦，帶領現場民眾認識道家拍打的基本觀念與日常操作方式。',
+    folder: 'assets/events/event1-taipei-neihu',
+    count: 10
+  },
+  {
+    id: 'event2',
+    date: '2026.08.12',
+    location: '台中大里',
+    title: '第二場｜台中大里',
+    desc: '公益講座巡迴第二場，於台中大里舉辦，與在地拍友交流拍打保健經驗。',
+    folder: null,
+    count: 0
+  },
+  {
+    id: 'event3',
+    date: '2026.08.24',
+    location: '台中豐原',
+    title: '第三場｜台中豐原',
+    desc: '公益講座巡迴第三場，於台中豐原舉辦，現場示範團拍與日常保健操作重點。',
+    folder: 'assets/events/event3-taichung-fengyuan',
+    count: 10
+  },
+  {
+    id: 'event4',
+    date: '2026.08.27',
+    location: '台中太平',
+    title: '第四場｜台中太平',
+    desc: '公益講座巡迴第四場，於台中太平舉辦，推廣拍打保健與健康生活觀念。',
+    folder: 'assets/events/event4-taichung-taiping',
+    count: 6
+  },
+  {
+    id: 'event5',
+    date: '2026.08.31',
+    location: '台中潭子',
+    title: '第五場｜台中潭子',
+    desc: '公益講座巡迴第五場，於台中潭子舉辦，帶動更多在地民眾一起認識道家拍打。',
+    folder: null,
+    count: 0
+  },
+  {
+    id: 'event6',
+    date: '2026.09.02',
+    location: '彰化員林',
+    title: '第六場｜彰化員林',
+    desc: '公益講座巡迴第六場，於彰化員林舉辦，圓滿完成全台巡迴公益推廣行程。',
+    folder: 'assets/events/event6-changhua-yuanlin',
+    count: 12
+  }
+];
+
+const grid = document.getElementById('eventGrid');
+
+EVENTS.forEach(ev => {
+  const hasPhotos = ev.folder && ev.count > 0;
+  const card = document.createElement('article');
+  card.className = 'event-card' + (hasPhotos ? '' : ' disabled');
+
+  const thumbStyle = hasPhotos ? `style="background-image:url('${ev.folder}/01.jpg')"` : '';
+  const thumbContent = hasPhotos
+    ? `<div class="count">${ev.count} 張照片</div>`
+    : `<span>照片籌備中</span>`;
+
+  card.innerHTML = `
+    <div class="thumb${hasPhotos ? '' : ' empty'}" ${thumbStyle}>${thumbContent}</div>
+    <div class="body">
+      <div class="tag">${ev.date}｜${ev.location}</div>
+      <h3>${ev.title}</h3>
+      <p>${ev.desc}</p>
+      <div class="cta">${hasPhotos ? '查看照片 →' : '影片整理中，敬請期待'}</div>
+    </div>
+  `;
+
+  if (hasPhotos) {
+    card.addEventListener('click', () => openLightbox(ev, 0));
+  }
+
+  grid.appendChild(card);
+});
+
+// Lightbox
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxCaption = document.getElementById('lightboxCaption');
+const lightboxCount = document.getElementById('lightboxCount');
+let currentEvent = null;
+let currentIndex = 0;
+
+function openLightbox(ev, index) {
+  currentEvent = ev;
+  currentIndex = index;
+  renderLightbox();
+  lightbox.classList.add('open');
+}
+
+function renderLightbox() {
+  const num = String(currentIndex + 1).padStart(2, '0');
+  lightboxImg.src = `${currentEvent.folder}/${num}.jpg`;
+  lightboxImg.alt = `${currentEvent.title} 照片 ${currentIndex + 1}`;
+  lightboxCaption.textContent = `${currentEvent.title}｜${currentEvent.date}`;
+  lightboxCount.textContent = `${currentIndex + 1} / ${currentEvent.count}`;
+}
+
+function closeLightbox() {
+  lightbox.classList.remove('open');
+  currentEvent = null;
+}
+
+document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+
+document.getElementById('lightboxPrev').addEventListener('click', () => {
+  if (!currentEvent) return;
+  currentIndex = (currentIndex - 1 + currentEvent.count) % currentEvent.count;
+  renderLightbox();
+});
+document.getElementById('lightboxNext').addEventListener('click', () => {
+  if (!currentEvent) return;
+  currentIndex = (currentIndex + 1) % currentEvent.count;
+  renderLightbox();
+});
+
+document.addEventListener('keydown', (e) => {
+  if (!lightbox.classList.contains('open')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') document.getElementById('lightboxPrev').click();
+  if (e.key === 'ArrowRight') document.getElementById('lightboxNext').click();
+});
+</script>
+</body>
+</html>
