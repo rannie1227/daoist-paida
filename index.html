@@ -73,6 +73,27 @@ h2{font-size:34px;color:var(--deep);margin:5px 0 8px}
 .search-frame-wrap iframe{display:block;width:100%;height:640px;border:0}
 .search-note{text-align:center;color:var(--muted);font-size:13px;margin-top:14px}
 .search-note a{color:var(--green);font-weight:700}
+.member-intro{max-width:720px;margin:0 auto 40px;text-align:center;color:#425a4d}
+.member-intro p{margin-bottom:10px}
+.member-intro .thanks{font-weight:800;color:var(--deep);font-size:17px;margin-top:14px}
+.fund-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:36px}
+.fund-card{background:#fff;border-radius:20px;padding:26px;box-shadow:var(--shadow);border:1px solid #edf0eb}
+.fund-card h3{color:var(--deep);font-size:18px;margin-bottom:10px}
+.fund-card p{font-size:15px;color:var(--text)}
+.fund-card .muted-note{color:var(--muted);font-size:13px;margin-top:8px}
+.member-form{background:#fff;border-radius:24px;padding:36px;box-shadow:var(--shadow);border:1px solid #edf0eb}
+.form-row{margin-bottom:18px;display:flex;flex-direction:column;gap:8px}
+.form-row label{font-weight:700;color:var(--deep);font-size:14px}
+.form-row input,.form-row textarea{font:inherit;padding:11px 14px;border:1px solid #d8ded9;border-radius:10px;background:var(--cream);color:var(--text)}
+.form-row input:focus,.form-row textarea:focus{outline:2px solid var(--green);outline-offset:1px}
+.radio-group{display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:500;color:var(--text)}
+.radio-group.inline{flex-direction:row;flex-wrap:wrap;gap:16px}
+.radio-group label{font-weight:500;display:flex;align-items:center;gap:6px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 24px;margin-bottom:10px}
+.form-row.full{grid-column:1/-1}
+.form-status{margin-top:14px;font-weight:700}
+.form-status.ok{color:var(--green)}
+.form-status.err{color:#b23b3b}
 .notice{background:var(--deep);color:#fff;border-radius:25px;padding:42px;text-align:center}
 .notice h2{color:#fff}
 .notice p{color:#dbe8df;margin:10px auto 25px;max-width:700px}
@@ -86,7 +107,7 @@ footer p,footer a{font-size:14px;color:#b9cbbf}
   nav{display:none;position:absolute;left:0;right:0;top:72px;background:var(--cream);padding:15px 5%;flex-direction:column;box-shadow:0 10px 20px rgba(0,0,0,.06)}
   nav.open{display:flex}.menu{display:block}
   .hero{min-height:570px}.hero-content{padding:55px 0}
-  .grid,.about,.footer-grid{grid-template-columns:1fr}
+  .grid,.about,.footer-grid,.fund-grid,.form-grid{grid-template-columns:1fr}
   section{padding:62px 0}.stats{grid-template-columns:1fr 1fr 1fr}
 }
 @media(max-width:520px){
@@ -111,7 +132,7 @@ footer p,footer a{font-size:14px;color:#b9cbbf}
       <a href="#courses">課程</a>
       <a href="#shop">養生小舖</a>
       <a href="#knowledge">養生知識</a>
-      <a href="#search">症狀查詢</a>
+      <a href="#join">加入會員</a>
       <a href="#contact">聯絡我們</a>
     </nav>
   </div>
@@ -211,13 +232,99 @@ footer p,footer a{font-size:14px;color:#b9cbbf}
   </div>
 </section>
 
-<section id="search">
+<section id="join" class="green-section">
   <div class="container">
-    <div class="section-head"><div class="kicker">SYMPTOM SEARCH</div><h2>症狀對治查詢｜黃帝內經研究社</h2><p>輸入病症或拍打關鍵字（二個中文字即可），查詢對應的拍打對治方式。</p></div>
-    <div class="search-frame-wrap">
-      <iframe src="https://www.qibo.me/index.php" title="黃帝內經研究社｜症狀對治查詢" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="section-head">
+      <div class="kicker">JOIN & DONATE</div>
+      <h2>加入會員．愛心捐款</h2>
+      <p>為了推廣道家拍打，我們成立全國性的台灣道家拍打保健協會。</p>
     </div>
-    <p class="search-note">內容由「黃帝內經研究社」提供並經授權嵌入。若下方無法正常顯示，請改用 <a href="https://www.qibo.me/index.php" target="_blank" rel="noopener">開啟原始網站 →</a></p>
+
+    <div class="member-intro">
+      <p>除了不定期的線上課程，也陸續製作短影片教大家如何保健；加入協會課程費用會比較優惠，後續也會規劃實體講座課程。</p>
+      <p>如果您願意支持協會的運作與推廣，可以參考以下資訊加入協會會員。</p>
+      <p>很感謝您願意為了拍打付出一份力量，協會因為您的支持與幫忙，讓我們可以幫助更多的人，推廣更多的善與健康。</p>
+      <p class="thanks">謝謝您，有您真好。</p>
+    </div>
+
+    <div class="fund-grid">
+      <div class="fund-card">
+        <h3>協會帳號</h3>
+        <p>郵局：700</p>
+        <p>帳號：0021211-0939481</p>
+        <p class="muted-note">隨喜捐贈，感恩有您</p>
+      </div>
+      <div class="fund-card">
+        <h3>費用說明</h3>
+        <p>入會費：1000 元</p>
+        <p>會費：年度費用 1200 元</p>
+        <p class="muted-note">第一次匯款費用 2200 元，之後年度費用 1200 元</p>
+      </div>
+      <div class="fund-card">
+        <h3>聯絡我們</h3>
+        <p>理事長：林育賢｜0912-315-802</p>
+        <p>協會秘書：張玉妮｜0912-358-459</p>
+        <p class="muted-note">台灣道家拍打保健協會：台內團字第1140051966號</p>
+      </div>
+    </div>
+
+    <p class="search-note" style="margin-bottom:26px">匯款完請填寫以下表單，以利建檔與製作會員名冊；愛心捐款也歡迎填寫您的資訊，我們會定期在群組公告，感謝您的愛心，讓愛發光。</p>
+
+    <form id="memberForm" class="member-form">
+      <div class="form-row">
+        <label>身份類別</label>
+        <div class="radio-group">
+          <label><input type="radio" name="type" value="加入協會" checked> 我想加入協會，支持拍打與健康能走得更長更遠</label>
+          <label><input type="radio" name="type" value="贊助捐款"> 我想贊助協會，加入善的循環</label>
+        </div>
+      </div>
+
+      <div class="form-grid">
+        <div class="form-row">
+          <label for="f-name">姓名</label>
+          <input id="f-name" name="name" type="text" required>
+        </div>
+        <div class="form-row">
+          <label>性別</label>
+          <div class="radio-group inline">
+            <label><input type="radio" name="gender" value="男生" checked> 男生</label>
+            <label><input type="radio" name="gender" value="女生"> 女生</label>
+            <label><input type="radio" name="gender" value="其他"> 其他</label>
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="f-birthday">生日</label>
+          <input id="f-birthday" name="birthday" type="date">
+        </div>
+        <div class="form-row">
+          <label for="f-phone">電話</label>
+          <input id="f-phone" name="phone" type="tel" required>
+        </div>
+        <div class="form-row full">
+          <label for="f-address">地址</label>
+          <input id="f-address" name="address" type="text">
+        </div>
+        <div class="form-row full">
+          <label for="f-email">E-mail（協會活動通知）</label>
+          <input id="f-email" name="email" type="email">
+        </div>
+        <div class="form-row">
+          <label for="f-amount">匯款金額</label>
+          <input id="f-amount" name="amount" type="text" inputmode="numeric">
+        </div>
+        <div class="form-row">
+          <label for="f-last5">匯款帳號後五碼</label>
+          <input id="f-last5" name="last5" type="text" maxlength="5">
+        </div>
+        <div class="form-row full">
+          <label for="f-message">想對協會說的話</label>
+          <textarea id="f-message" name="message" rows="3"></textarea>
+        </div>
+      </div>
+
+      <button type="submit" class="btn primary" id="memberSubmitBtn">送出資料</button>
+      <p id="memberFormStatus" class="form-status" hidden></p>
+    </form>
   </div>
 </section>
 
@@ -237,7 +344,7 @@ footer p,footer a{font-size:14px;color:#b9cbbf}
   <div class="container">
     <div class="footer-grid">
       <div><h3>台灣道家拍打保健協會</h3><p>利人為本．全民健康</p><p>推廣拍打保健、健康生活教育與公益活動。</p></div>
-      <div><h3>快速連結</h3><p><a href="#about">認識協會</a></p><p><a href="#events">公益活動</a></p><p><a href="#courses">課程</a></p><p><a href="#shop">養生小舖</a></p><p><a href="#search">症狀查詢</a></p></div>
+      <div><h3>快速連結</h3><p><a href="#about">認識協會</a></p><p><a href="#events">公益活動</a></p><p><a href="#courses">課程</a></p><p><a href="#shop">養生小舖</a></p><p><a href="#join">加入會員</a></p></div>
       <div><h3>聯絡我們</h3><p>官方 LINE：@318iyufo</p><p>歡迎加入官方 LINE 掌握最新活動</p><p style="margin-top:10px"><a href="https://line.me/R/ti/p/%40318iyufo" target="_blank" rel="noopener">加入官方 LINE →</a></p></div>
     </div>
     <div class="footer-bottom">
@@ -251,6 +358,47 @@ footer p,footer a{font-size:14px;color:#b9cbbf}
 document.querySelectorAll('nav a').forEach(a=>{
   a.addEventListener('click',()=>document.querySelector('nav').classList.remove('open'));
 });
+
+// 部署 Apps Script 網頁應用程式後，把網址貼在這裡取代下面這一行
+const MEMBER_FORM_ENDPOINT = "PUT_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE";
+
+const memberForm = document.getElementById('memberForm');
+if (memberForm) {
+  memberForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    const statusEl = document.getElementById('memberFormStatus');
+    const btn = document.getElementById('memberSubmitBtn');
+
+    if (MEMBER_FORM_ENDPOINT.indexOf('PUT_YOUR_APPS_SCRIPT') === 0) {
+      statusEl.hidden = false;
+      statusEl.className = 'form-status err';
+      statusEl.textContent = '尚未設定表單接收網址，請聯絡協會管理員完成設定。';
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = '送出中…';
+
+    const data = new URLSearchParams(new FormData(memberForm));
+
+    fetch(MEMBER_FORM_ENDPOINT, { method: 'POST', mode: 'no-cors', body: data })
+      .then(function(){
+        statusEl.hidden = false;
+        statusEl.className = 'form-status ok';
+        statusEl.textContent = '感謝您的填寫！我們已收到您的資料。';
+        memberForm.reset();
+      })
+      .catch(function(){
+        statusEl.hidden = false;
+        statusEl.className = 'form-status err';
+        statusEl.textContent = '送出時發生問題，請稍後再試一次，或透過官方 LINE 聯絡我們。';
+      })
+      .finally(function(){
+        btn.disabled = false;
+        btn.textContent = '送出資料';
+      });
+  });
+}
 </script>
 </body>
 </html>
